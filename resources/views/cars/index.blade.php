@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@foreach ($cars as $car)
-    {{ $car->name }}
-@endforeach
+
 
 @section('content')
 
@@ -40,15 +38,17 @@
                     </form>
                 </div>
                 <span class="uppercase text-blue-500 font-bold text-xs italic">
-                    Founded: 
+                    Founded: {{ $car->founded }}
                 </span>
 
-                <h2 class="text-grey-700 text-5xl">
-                    
+                <h2 class="text-grey-700 text-5xl hover:text-gray-500">
+                    <a href="/cars/{{ $car->id }}">
+                        {{ $car->name }}
+                    </a>
                 </h2>
 
                 <p class="text-lg text-gray-700 py-6">
-                    
+                    {{ $car->description }}
                 </p>
 
                 <hr class="mt-4 mb-8">

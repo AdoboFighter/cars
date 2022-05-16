@@ -16,4 +16,9 @@ class Car extends Model
     protected $visible = ['name', 'founded', 'description'];
     // protected $timestamps = true;
     // protected $dateFormat = 'h:m:s';
+
+    public function carmodels()
+    {
+        return $this->hasMany(CarModel::class);
+    }
 }
